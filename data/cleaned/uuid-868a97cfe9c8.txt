@@ -1,0 +1,617 @@
+25년선도사업
+클러스터관리대시보드개발
+2025.02.11 젝사젠
+2025.02.17 ETRI 슈퍼컴퓨팅시스템연구실
+2025.02.24 ETRI 슈퍼컴퓨팅시스템연구실
+2025.03.06 ETRI 슈퍼컴퓨팅시스템연구실
+
+안건
+(1) 전시회참가관련하프랙구성방안
+ 전시회: ETRI Conference(6월1주차) , ISC 2025 (6월2주차)
+ 관리노드2대확보: 3월11일이후, 2U x86 고성능서버사용가능
+ 관리용Ethernet 스위치계산용IB 스위치(필요성??)
+ KVM 스위치
+(2) 대시보드UI 재구성방안
+ 다음페이지
+(3) AB21 모니터링방안
+ 별첨
+(4) 데모앱개발방안
+ 다음페이지: SoC 부서와회의후보완
+
+(1) 전시회참가관련하프랙구성방안
+IBethernet
+관리2(2U4U)
+KVM switch(1U)
+HDMI-HDMI
+IB
+IBEth 
+switch(1U)
+실버1 (3U)
+실버2 (3U)
+CDU
+모니터
+관리1(2U4U)
+
+(2) 대시보드 UI 재구성 방안
+
+
+클러스터 구성과 동작 상황을 한눈에 볼 수 
+있는 간단 그래픽 (아래 예제)
+1. main menu
+Dashboard
+Supreme-K cluster
+Compute node 1
+Compute node 2
+Compute node 3
+Compute node 4
+Compute node 5
+Compute node 6
+Compute node 7
+Compute node 8
+Storage node 1
+Storage node 2
+Storage node 3
+Management node 
+Applications
+Admin console
+
+Full setup 기준으로 메뉴 구성
+
+구축되지 않은 HW는 회색글씨메뉴 disable
+
+대시보드에서 실행시킬 수 있는 데모앱
+
+CLI : slurm으로 HPL 실행
+
+관리 기능 총괄
+
+2. ComputeStorage nodes
+Dashboard
+Supreme-K cluster
+Compute node 1 
+- configuration
+- monitoring
+Compute node 2
+Compute node 3
+Compute node 4
+Compute node 5
+Compute node 6
+Compute node 7
+Compute node 8
+Storage node 1
+Storage node 2
+Storage node 3
+Management node 
+Applications
+Admin console
+AB211 monitoring
+AB212 monitoring
+
+3. Management nodes
+Dashboard
+Supreme-K cluster
+Compute node 1
+Compute node 2
+Compute node 3
+Compute node 4
+Compute node 5
+Compute node 6
+Compute node 7
+Compute node 8
+Storage node 1
+Storage node 2
+Storage node 3
+Management node
+- Provisioning
+- Remote control
+- Job scheduling
+Applications
+Admin console
+V Compute node 1
+V Compute node 2
+ㅁ Compute node 3
+ㅁ Compute node 4
+ㅁ Compute node 5
+ㅁ Compute node 6
+ㅁ Compute node 7
+ㅁ Compute node 8
+
+4. Applications
+Dashboard
+Supreme-K cluster
+Compute node 1
+Compute node 2
+Compute node 3
+Compute node 4
+Compute node 5
+Compute node 6
+Compute node 7
+Compute node 8
+Storage node 1
+Storage node 2
+Storage node 3
+Management node
+Applications
+- HPL
+- BLAS
+Admin console
+run
+BLAS
+DGEMM
+node
+1 V 
+AB21
+2 V 
+XEMIS
+
+run
+M size
+1024V
+2048V
+4096V
+8192V 
+result
+(M1024, 2048, 4096, 8192
+성능
+실행시간
+
+AB211 monitoring
+AB212 monitoring
+
+5. Admin console
+Dashboard
+Supreme-K cluster
+Compute node 1
+Compute node 2
+Compute node 3
+Compute node 4
+Compute node 5
+Compute node 6
+Compute node 7
+Compute node 8
+Storage node 1
+Storage node 2
+Storage node 3
+Management node
+Applications
+Admin console
+
+(3) AB21 모니터링 방안
+
+AB21 모니터링 데이터 저장파일 (250224)
+AB21 모니터링 파일
+control  status register (CSR)
+의미
+output(데이터타입)
+axpu_classaxpu_device0..1
+XEMIS_CLS00..XEMIS_CLS07
+XEMIS00XEMIS07
+XEC00XEC03
+ELAPSED_CYCLES
+ELAPSED_CYCLES_L
+SCR1의 MCYCLE활용
+unsigned long
+ELAPSED_CYCLES_H
+ACTIVE_CYCLES
+ACTIVE_CYCLES_L
+각XECM의 active cycle
+unsigned long
+ACTIVE_CYCLES_H
+INST_EXECUTED
+INST_EXECUTED_L
+SCR1의 MINSTRET활용
+unsigned long
+INST_EXECUTED_H
+INST_LOAD
+INST_LOAD
+각XECM의 load 명령수
+unsigned int
+INST_STORE
+INST_STORE
+각XECM의 store 명령수
+unsigned int
+INST_ATOMIC
+INST_ATOMIC
+각XECM의 atomic operation수: lr.wsc.wlr.
+dsc.
+unsigned int
+INST_XEM
+INST_XEM
+각XECM의 XEM명령수(all instruction type s
+merged
+unsigned int
+INST_ALS_A2F
+INST_ALS_A2F
+각XECM의 ALS.A2F명령수(all instruction ty
+pes merged
+unsigned int
+INST_ALS_F2A
+INST_ALS_F2A
+각XECM의 ALS.F2A명령수(all instruction ty
+pes merged
+unsigned int
+SRAM_LOAD
+SRAM_LOAD
+Number of reads from SRAM by XEMIS
+unsigned int
+SRAM_STORE
+SRAM_STORE
+Number of writes to SRAM by XEMIS
+unsigned int
+BUSY
+threada_en
+XEC의 상태 : BUSY(1), IDLE(0)
+unsigned int
+axpu_classaxpu_device0..1
+FPGA 상의 파일 위치와 AB21 상의
+ 파일 위치가 같음
+nr_xpu
+-
+XPU 개수
+unsigned int
+id
+-
+XPU id
+unsigned int
+name
+-
+XPU 이름
+unsigned int
+nr_xemis
+-
+XEMIS 개수
+unsigned int
+nr_xec_xemis
+-
+XEC 개수
+unsigned int
+sys_total_mem
+-
+총 메모리 용량
+unsigned int
+alloc_mem
+-
+할당된 메모리 용량(가변)
+unsigned int
+sys_free_mem
+-
+free 메모리 용량(가변)
+unsigned int
+scratch_size
+-
+스크래치패드 메모리 용량
+unsigned int
+cache_size
+-
+캐시 크기
+unsigned int
+ps
+-
+Pid, process name
+axpu_classaxpu_device0..1power
+autosuspend_delay_ms
+-
+control
+-
+runtime_active_time
+-
+runtime_suspended_time
+-
+runtime_status
+-
+axpu_classaxpu_device0..1temp
+발열
+AB21 칩 내부에 Temperature Sensor, 인터페이스 
+확인 필요
+unsigned int
+axpu_classaxpu_device0..1power_co
+ns
+전력 사용
+- PMU 칩 I2C 연동 가능 확인 필요
+- ACC 보드에 엤는 PMU에 연결하여 정보를 추출
+해야 하는데, 지금은 별도의 장비를 연결하고, 
+Windows OS 상에서 구동되는 프로그램을 통해 
+모니터링 중
+- 관리노드에서 이 정보를 추출하는 것이 가능한
+지 여부확인 필요 : I2C로 연결 여부 확인우선 : 해
+당 PMU 칩에서 메뉴얼로 관련 정보가 제공 되고 
+있다면 I2C로 그정보를 읽어서 관리노드로 전달하
+는방법필요
+unsigned int
+ sample codes from SoC
+PMON 데이터 기록 start?
+PMON 데이터 기록 finish?
+PMON 데이터 기록 reset?
+상시 데이터 기록?
+측정 시 확인?
+측정 방법은?
+측정 시 확인?
+측정 방법은?
+측정 시 확인?
+측정 방법은?
+
+AB21 모니터링 데이터 시각화
+XEMIS00
+XEMIS01
+XEMIS02
+XEMIS03
+XEMIS04
+XEMIS05
+XEMIS06
+XEMIS07
+
+XEMIS_CLS00 XEMIS_CLS01XEMIS_CLS02 XEMIS_CLS03XEMIS_CLS04 XEMIS_CLS05 XEMIS_CLS06 XEMIS_CLS07
+
+동적 정보 : 주기적 refresh (주기 : 13초)
+
+Busy : 녹색표기
+
+Idle : 회색 표기
+
+정적 정보 : 시작-끝 간 누적 정보
+- 시작 때 reset data
+XEMIS_CLS
+00..07
+XEMIS
+00..07
+XEC
+00..03
+ELAPSED_CYCLES: 32390
+ACTIVE_CYCLES : 509360
+INST_EXECUTED : 3949
+INST_LOAD : 1111
+INST_STORE : 2222
+INST_ATOMIC : 1000
+INST_XEM : 8256
+INST_ALS_A2F : 567
+INST_ALS_F2A : 966
+SRAM_LOAD : 33
+SRAM_STORE : 33
+XEMIS_CLS
+00..07
+XEMIS
+00..07
+XEC
+00..03
+ELAPSED_CYCLES: 32390
+ACTIVE_CYCLES : 509360
+INST_EXECUTED : 3949
+INST_LOAD : 1111
+INST_STORE : 2222
+INST_ATOMIC : 1000
+INST_XEM : 8256
+INST_ALS_A2F : 567
+INST_ALS_F2A : 966
+SRAM_LOAD : 33
+SRAM_STORE : 33
+AB211 monitoring
+AB212 monitoring
+
+If ??  ?? 
+회색(idle)
+Else 녹색(busy)
+무슨 정보로 
+Busyidle 여부 판단? 
+어떻게 시작-끝 판단? 
+
+xpu-sim
+
+AB21 모니터링 시각화(visualization)
+IBethernet
+관리2
+KVM switch
+HDMI-HDMI
+IB
+IBEth switch
+실버1
+실버2
+CDU
+모니터
+관리1
+실버1
+관리1
+관리Agent
+Sys file
+Request 
+분석
+Request to 실버1
+XPU data
+XDD
+XPU
+get data 시도
+할 때,
+XDD가 CSR에
+서 정보 읽어
+와서 파일에 
+씀
+get data
+Response
+생성
+Response from 실버1
+실버2
+관리Agent
+..
+좌동
+관리
+Mater
+모니터
+Response
+생성
+대시보드
+main
+User 
+request
+Display 
+result
+Reset CSR
+(누가?, 언제?)
+PMON data
+Startstopreset 방법?
+Sample code 제공
+
+DGEMM (SGEMM, ??)
+ 실행 command
+ dgemm param1 param2 param3 param4 param5
+ Param1 : M size
+ Param2 : N size
+ Param3 : K size
+ Param4 : AB21 번호
+ Param5 : XEMIS 수
+ 예)  degmm 1024 2000 300 0 64
+ 실행결과 
+ 성능단위 : GFs (또는 MFs, TFs)
+ 실행시간 : milli second 또는 micro second
+ 계산결과 : 함수에따라 다름(matrix, vector, scalar)
+ 포맷 이슈
+ 2차원 값을 Graph(꺽은선 그래프)로 가시화
+
+(4) 데모앱 개발 방안
+
+데모앱(DGEMMaAxBbC)
+파라미터
+비고
+측정값
+반복수행
+①매트릭스 크기(M) 가변 시
+(M1024, 2048, 4096, )
+입력 수정
+성능(GFs)
+실행 시간(s)
+②코어(XEMIS) 개수 가변 시
+(XEMIS1, 32, 64)
+(M 고정(예, 4096))
+응용 수정?
+성능(GFs)
+실행 시간(s)
+③프로세서 변경 시
+(only Altra, Altra  AB21)
+(M 고정(예, 4096))
+응용입력 
+수정 ?
+성능(GFs)
+실행 시간(s)
+
+(M1024, 2048, 4096, )
+성능
+실행시간
+
+(XEMIS1, 16, 32, 64)
+성능
+실행시간
+
+only Altra, AltraAB21
+AltraAB21
+Altra
+
+DGEMM 시각화 사례
+
+데모앱 실행 및 결과 시각화(visualization)
+IBethernet
+관리2
+KVM switch
+HDMI-
+HDMI
+IB
+IBEth switch
+실버1
+실버2
+CDU
+모니터
+관리1
+실버1
+관리1
+관리Agent
+응용 호출
+SoCL RT
+Request 
+분석
+Request to 실버1
+XDD
+Response from 실버1
+실버2
+..
+Applica
+tion 
+모니터
+결과 파싱디스
+플레이 포맷
+대시보드
+main
+Request:
+Library  
+input 
+parameters
+Display 
+result
+Application 실행
+(output file 지정 : 
+예) degem  
+degem-date_time.out
+Kernel 실행요청
+XPU
+XPU 실행
+실행 결과 읽기
+좌동
+Output file
+에 저장
+응용
+(DGEMM)
+Kernel 실행요청
+(start time 측정)
+실행결과
+Kernel 실행종료
+(end time 측정)
+: 실행시간:end-
+start
+실행결과 저장matplotlib
+matplotlib
+결과를
+주기적으
+로 폴링
+
+DGEMM 수행결과
+- output file : sysfileappBLASDGEMM_Date_Time.txt 
+- 1행마다, 4개 값(unsigned int, 각 값 blank로구분) python matplotlib
+no
+Message 
+size(M)
+Time
+(단위:ms)
+Performance
+(단위:GFs)
+
+
+
+
+
+
+Performance
+time
+performance
+1024 2048 3076 4096 Message size 
+추후(430) 확정 
+ message size 변화 값과단계 :
+(예) 1024204830764096
+ 반복회수 : 10회or 100회or ?
+https:www.scaler.comtopicsmatplotlibmatplotlib-2d-plot
+
+(참고) 현재 대시보드
+ 개발 상황
+
+1. cluster
+
+2. nodes
+
+3. remote control
+
+4. slurm monitoring
+
+5. resource monitoring
+
+6. FRU
+
+7. image provisioning
+
+8. report
+
+9. Admin console

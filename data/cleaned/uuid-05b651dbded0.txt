@@ -1,0 +1,40 @@
+Unnamed: 0 Unnamed: 1 Unnamed: 2 Unnamed: 3 Unnamed: 4 Unnamed: 5 Unnamed: 6 Unnamed: 7 Unnamed: 8 Unnamed: 9 Unnamed: 10 Unnamed: 11 Unnamed: 12 Unnamed: 13 Unnamed: 14
+0 NaN 경 력 증 명 서 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN
+1 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN
+2 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN
+3 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN
+4 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN
+5 NaN 인적사항 성명 NaN NaN NaN NaN NaN NaN NaN 주민등록번호 NaN NaN NaN NaN
+6 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN
+7 NaN NaN 주소 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN
+8 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN
+9 NaN 경력사항 근무 NaN NaN NaN NaN NaN NaN NaN 부서 NaN 직급 NaN 근속기간
+10 NaN NaN 시작일 NaN NaN NaN 종료일 NaN NaN NaN NaN NaN NaN NaN NaN
+11 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN
+12 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN
+13 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN
+14 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN
+15 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN
+16 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN
+17 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN
+18 NaN NaN 근속 년수 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN 0년 0개월 0일 
+19 NaN 발급사항 법인명 NaN NaN 젝사젠 주식회사 NaN NaN NaN 사업자등록번호 NaN NaN 722-86-02927 NaN NaN
+20 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN
+21 NaN NaN 주소 NaN NaN 경기도 안양시 동안구 벌말로 126, 20층 2005호 NaN NaN NaN NaN NaN NaN NaN NaN NaN
+22 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN
+23 NaN NaN 용도 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN
+24 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN
+25 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN
+26 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN
+27 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN
+28 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN
+29 NaN NaN NaN 위 기재사항이 허위가 없음을 증명합니다. NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN
+30 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN
+31 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN
+32 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN
+33 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN
+34 NaN NaN NaN 2025-03-10 00:00:00 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN
+35 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN
+36 NaN NaN NaN 젝사젠 주식회사 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN
+37 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN
+38 NaN NaN NaN 대표이사 : 박 문 식 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN

@@ -1,0 +1,25 @@
+{
+  "chunks": [
+    "Dorado \n파일 입력 및 출력 확인 가능 ( pod5 - bam )\ndorado 데모는 데이터를 고정해서 잘 구동되게 만들어 놓은 이미지(latest) 와\n 파일 입출력 기능을 추가한 이미지 (0.0.1) 두가지로 나누었습니다.",
+    "Minimap2\n파일 입력 및 출력 확인 불가능\n현재 정해진 데이터대로 구동되는 출력 로그만 확인 가능",
+    "수행내용\nDorado - demo\n사전에 미리 지정된 data 를 이용해 dorado 컨테이너를 구동시킵니다.",
+    "Uri : miso.juxtagene.com\nID : juxtagene\nPW : 202\nDorado - demo",
+    "수행내용\nDorado  파일 IO\nDorado 에 .pod5 데이터를 입력하고 .bam 파일을 그 출력으로 받습니다.",
+    "프로젝트 생성\nDemo1 버튼을 누른 뒤\n프로젝트의 정보를 입력합니다.\nMultiple file 탭에 입력할 파일을 업로드합니다.",
+    "수행내용\nMinimap2 - demo\n사전에 미리 지정된 data 를 이용해 Minimap2 컨테이너를 구동시킵니다."
+  ],
+  "metadata": {
+    "original_filename": "900-인지노믹스작업내용.txt",
+    "text_hash": "2ebe3c7b1f24",
+    "text_length": 1438,
+    "created_at": "",
+    "tags": [],
+    "origin": "사내 문서"
+  },
+  "split_info": {
+    "chunk_size": null,
+    "stride": null,
+    "min_length": 50,
+    "total_chunks": 7
+  }
+}

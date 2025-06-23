@@ -1,0 +1,19 @@
+{
+  "chunks": [
+    "젝사젠 \n고성능 \n클라우드 서비스\n- Azure Cyclecloud 구축\n- Aws ParallelCluster 구축\n- 운영 서비스\n하이브리드 서비스\n- 도커 라이즈 서비스\n- 하이브리드 워크로드 분배 서비스\n-\n모니터링 서비스\n- 리소스 모니터링\n- 상태 모니터링\n-\nSaaS 형 하이브리드 HPC 관리 솔루션\n고성능 HPC를 활용한 유전체 데이터 생산 및 공급 서비스\n바이오 워크 플로우 서비스"
+  ],
+  "metadata": {
+    "original_filename": "(공개sw) 배너포스터 240923-001.txt",
+    "text_hash": "b37c0372bae0",
+    "text_length": 271,
+    "created_at": "",
+    "tags": [],
+    "origin": "사내 문서"
+  },
+  "split_info": {
+    "chunk_size": null,
+    "stride": null,
+    "min_length": 50,
+    "total_chunks": 1
+  }
+}

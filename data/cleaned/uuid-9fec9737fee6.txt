@@ -1,0 +1,80 @@
+슈퍼컴퓨터 개발 선도사업
+2022. 6. 29.
+단일 랙규모 클러스터 시스템 구축 및 시험 환경 기술 개발
+3차년도 연구 목표 및 예상 결과물
+예상 결과물
+HPC 클러스터 시스템 하드웨어 구성 및 운영체제 업데이트
+HPC 클러스터 시스템 스케쥴링  시스템 모니터링 고도화
+HPC 클러스터 시스템 인피니벤드 환경 설정 및 시험
+HPC 클러스터 시스템 구축에 필요한 스토리지 노드 환경 설정 및 시험
+HPC 클러스터 시스템 밴치마크 시험 환경 구축 및 시험
+연구 목표
+클러스터 기능시험 및 응용 실행 환경
+3차년도 연구목표
+슈퍼컴퓨터 테스트베드 고도화 목표
+연구 진행 예정
+HPC 클러스터 시스템 하드웨어 구성 및 운영체제 업데이트
+서버의 운영체제 업데이트 및 서버 상황
+연구 진행 예정
+HPC 클러스터 DashBoard 및 스케쥴링 모니터링 고도화
+Redfish를 활용한 클러스터 시스템 하드웨어 자원 모니터링
+클러스터 노드의 아키텍처는 ARM으로 구성
+www.supreme-k.org 
+REDFISH를 활용한 DashBoard 모니터링 고도화
+SLURM 기능을 활용한 스케쥴링 모니터링 고도화
+연구 진행 예정
+HPC 클러스터의 인피니벤드 환경설정 및 시험
+Mellanox Technologies MT27800 Family [ConnectX-5] (100G)
+네트워크 대역폭 확인(iperf 등)
+인피니밴드 테스트 결과
+X86 to x86 : 9095 
+X86 to ARM(mt.snow) : 5055
+ARM to ARM (mt.snow) : 3035
+인피니밴드 성능 측정을 위한 HPCG, HPL 를 수행
+우분투 업그레이드 진행.
+우분투 18.04 - 우분투 20.04
+
+연구 진행 예정
+HPC 클러스터의 스토리지 노드 환경설정 및 시험
+NFS - Lustre
+연산노드(mt.snow)에 마운트 되는 것을 목표로 진행.
+에트리에서 지원한 TYAN 서버로 진행. 
+
+클러스터의 lustre 파일시스템 구성요소
+연구 진행 예정
+HPC 클러스터 시스템 밴치마크 시험 환경 구축 및 시험
+POCL, QAND(spMV), HPCG, HPL 등 수행과 같은 시험.
+HPL GPU의 ARM 버전 에트리에서 바이너리 지원.
+계산노드(mt.snow) 가용한 GPU: T4 사용환경 구성은 미정.
+
+HPCG Report 화면
+Provisioning에 대해
+기존의 방식
+ CPU core 기반 HPC 시스템
+ GPU 기반 HPC 시스템
+
+주요 기능
+ OS provision
+ Hardware Control
+ Mangaement  Infrastructure Discovery
+Network
+특징
+ 전체 연산 노드 시스템 변경
+ 변경에 많은 시간 소요 (노드가 많을 수록 상승)
+
+Provisioning에 대한 전망
+우리의 방식
+ XPU 기반 HPC 시스템 도입
+ 만단위  노드에 배포
+
+Management Node
+주요 기능
+ OS provision
+ Hardware Control
+ Mangaement  Infrastructure Discovery
+Network
+Component
+ Ubuntu base Package system
+ Rocky Linux(Centos)
+ Apptainer(Singularity)
+ K8S base Management Tools

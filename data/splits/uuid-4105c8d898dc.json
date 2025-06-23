@@ -1,0 +1,23 @@
+{
+  "chunks": [
+    "온프레미스에서 클라우드로 워크로드 스위치 및 가상머신 동적 할당\n데모\n데모 목표 및 시스템 구성",
+    "Auto Scale-Out\n온프레미스 - Jenkins, docker registry, 워크로드 생성기, \n카프카, PBS 모니터링, 워크로드 제어기, OpenPBS\n클라우드 (Azure)  Cyclecloud, 워크로드 제어기, OpenPBS\n데모\n시나리오를 위한 인프라 구성",
+    "워크로드의 필요한 리소스가 클라우드에서 동적 할당 되는 모습\n온프레미스에서 클라우드로 워크로드가 스위치 되는 모습\n워크로드에 필요한 자원을 설정",
+    "사용중인 자원현황, PBS 작업 상태 현황\n온프레미스 (경기 안양) PBS 클러스터 상태를 모니터링",
+    "온프레미스에 서비스를 구축하는 경우 시스템 구성도\n하드웨어\nHOST 운영체제\n가상화\nGuest 운영체제\n쿠버네티스\n서비스"
+  ],
+  "metadata": {
+    "original_filename": "(젝사젠) 전체시스템구성도.txt",
+    "text_hash": "4105c8d898dc",
+    "text_length": 602,
+    "created_at": "",
+    "tags": [],
+    "origin": "사내 문서"
+  },
+  "split_info": {
+    "chunk_size": null,
+    "stride": null,
+    "min_length": 50,
+    "total_chunks": 5
+  }
+}

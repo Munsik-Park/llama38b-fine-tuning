@@ -20,7 +20,7 @@ def get_supported_extensions() -> List[str]:
     return [".pdf", ".docx", ".doc", ".pptx", ".ppt", ".xlsx", ".xls", ".hwp"]
 
 
-def find_documents(source_dir: str = "doc-source") -> Dict[str, List[str]]:
+def find_documents(source_dir: str = "data/raw") -> Dict[str, List[str]]:
     """지원되는 문서 파일들을 찾아서 형식별로 분류"""
     documents = {
         "pdf": [],

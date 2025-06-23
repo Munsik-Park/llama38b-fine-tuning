@@ -1,0 +1,45 @@
+HPC System Software Architecture
+11132024
+김성조
+Parallel File System (PFS)
+Operating System
+Middleware
+Parallel Programming Model
+Job scheduler
+Application and Software Development Ecosystem
+Agendas
+Lustre
+GPFS
+BeeGFS
+PanFS
+Ceph
+Parallel File Systems
+Full 2023 HPC SYSPROS Survey Results Jennett Tillotson Senior HPC Systems Engineer National Center for Atmospheric Research jtillotsucar.edu
+SUSE Linux
+RedHat Enterprise Linux (RHEL)
+Rocky
+CentOS
+Ubuntu
+Toss
+
+Operating Systems for HPC System
+Programming environment: CC, Fortran, Python
+Multithreading: openMP
+Compiler: PGI compilers, GNU compilers, Intel compiler
+GPU: OpenCL, CUDA
+
+Software Development Ecosystem
+openMPI
+Message Passing Interface Chameleon (MPICH)
+MVAPICH
+Intel MPI
+
+Message Passing Interface (MPI)
+Simple Linux Utility for Resource Management (SLURM)
+Portable Batch System (PBS)
+Terascale Open-source Resource and QUEue manager (TORQUE)
+Loading Sharing Facility (LSF)
+Sun Grid Engine (SGE)
+Workload Management
+Serial vs Parallel Programming
+Application and Software Development Ecosystem

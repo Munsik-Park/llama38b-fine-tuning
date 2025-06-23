@@ -1,0 +1,21 @@
+{
+  "chunks": [
+    "NIPA 과제 개발  파이프라인 도구가 필요한 이유\n바이오인포메틱스 개발자가 wdl 언어를 사용하여 바이오 데이터 분석 과정 설계가 쉽지 않음\n바이오 데이터 분석 과정이 수십과정(예, 코로나-19, 50개 과정)으로 구성되어 있음",
+    ".\nNIPA 과제 개발 내용범위\nwdl로 작성된 스크립트에 대한\n문법 검사\n구문 트리 작성\n데이터 흐름 그래프 생성 등\nwdl 스크립트 실행 엔진\nWOMtool (as-is)",
+    "명령어 기반 사용 환경 (Command Line Interface)의 어려움\nWOMtool (to-be)"
+  ],
+  "metadata": {
+    "original_filename": "개발내용-정성인-개발범위.txt",
+    "text_hash": "ad5c1e20341f",
+    "text_length": 354,
+    "created_at": "",
+    "tags": [],
+    "origin": "사내 문서"
+  },
+  "split_info": {
+    "chunk_size": null,
+    "stride": null,
+    "min_length": 50,
+    "total_chunks": 3
+  }
+}

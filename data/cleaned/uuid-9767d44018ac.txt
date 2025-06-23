@@ -1,0 +1,632 @@
+slurm 사용 및 운용
+Arm64 Server cluster
+Rev 1.1, 20211026
+
+작성자
+한태현
+작성 일자
+2021-9-7
+문서의 이력
+버 전
+날 짜
+작 성
+변경사항
+1.0
+2021-10-25
+한태현
+최초 작성
+Cluster 상세
+
+관리노드
+
+Cluster 구조
+
+접속 및 운용
+
+접속 방법
+
+빠른 운용
+
+sinfo : 노드 및 파티션 상태 확인
+
+squeue : 클러스터에 실행중인 job 확인
+
+HPL 실행
+
+Slurm script 작성 및 실행
+
+간단한 slurm script 구조
+
+실행 (HPL)
+
+실행 (HPCG)
+
+실행 후 결과
+
+215
+
+작성자
+한태현
+작성 일자
+2021-9-7
+Local Cluster
+1.
+Cluster 상세
+1.1.
+관리노드
+
+X86
+
+hostname : mastercl
+
+urlip : supreme-k.org  59.14.34.120
+1.2.
+Cluster 구조
+
+Cavium ThunderX -- 1
+
+hostname : thunder01
+항목
+사양
+CPU
+Model : CN8890
+Cores : 48
+Threads : 48
+Freq : 1.9GHz
+2EA
+Memory
+64GB
+
+eth IPaddr : 192.168.5.99
+
+bmc IPaddr : 192.168.5.98
+
+Cavium ThunderX -- 2
+
+hostname : thunder02
+항목
+사양
+CPU
+Model : CN8890
+Cores : 48
+Threads : 48
+Freq : 1.9GHz
+2EA
+Memory
+32GB
+315
+
+작성자
+한태현
+작성 일자
+2021-9-7
+
+eth IPaddr : 192.168.5.92
+
+bmc IPaddr : 192.168.5.91
+
+Ampere mt.snow -- 1
+
+hostname : snow01
+항목
+사양
+CPU
+Ampere Altra Processor (80 cores)
+Memory
+256GB
+
+eth IPaddr : 192.168.5.94
+
+bmc IPaddr : 192.168.5.95
+
+Ampere mt.snow -- 2
+
+hostname : snow02
+항목
+사양
+CPU
+Ampere Altra Processor (80 cores)
+Memory
+256GB
+
+eth IPaddr : 192.168.5.96
+
+bmc IPaddr : 192.168.5.97
+
+SLURM partition 구조
+
+thunder
+
+thunder[01-02]
+
+snow
+
+snow[01-02]
+
+all
+
+thunder[01-02],snow[01-02]
+
+주의사항
+
+실행할스크립트, 라이브러리, 어플리케이션등은모든노드에
+연결된 공유 directory 에 위치해야 한다. (clusterfs 하위)
+415
+
+작성자
+한태현
+작성 일자
+2021-9-7
+2.
+접속 및 운용
+2.1.
+접속 방법
+
+Cluster Login node 에 접속
+
+url : supreme-k.org
+ssh etrisupreme-k.org
+
+ID : etri
+
+PW : 사전에 공지된 pw
+2.2.
+빠른 운용
+
+sinfo : 노드 및 파티션 상태 확인
+etrimastercl: sinfo
+PARTITION AVAIL TIMELIMIT NODES STATE NODELIST
+thunder up infinite 2 alloc thunder[01-02]
+snow up infinite 2 alloc snow[01-02]
+all up infinite 4 alloc snow[01-02],thunder[01-02]
+
+squeue : 클러스터에 실행중인 job 확인
+etrimastercl: squeue
+JOBID PARTITION NAME USER ST TIME NODES
+NODELIST(REASON)
+130 snow submit_s etri R 28:18 2 snow[01-02]
+133 thunder submit_t etri R 0:07 2 thunder[01-02]
+
+HPL 실행
+
+사전에 benchmark 를 위한 script 를 작성함.
+etrimastercl:clusterfsetrihplbinLinux_Arm .001_runhpl.sh snow
+snow
+PARTITION AVAIL TIMELIMIT NODES STATE NODELIST
+thunder up infinite 2 idle thunder[01-02]
+snow up infinite 2 idle snow[01-02]
+515
+
+작성자
+한태현
+작성 일자
+2021-9-7
+all up infinite 4 idle snow[01-02],thunder[01-02]
+Submitted batch job 135
+JOBID PARTITION NAME USER ST TIME NODES
+NODELIST(REASON)
+135 snow submit_s etri PD 0:00 2 (None)
+etrimastercl:clusterfsetrihplbinLinux_Arm .001_runhpl.sh
+thunder
+thunder
+PARTITION AVAIL TIMELIMIT NODES STATE NODELIST
+thunder up infinite 2 idle thunder[01-02]
+snow up infinite 2 alloc snow[01-02]
+all up infinite 2 alloc snow[01-02]
+all up infinite 2 idle thunder[01-02]
+Submitted batch job 136
+JOBID PARTITION NAME USER ST TIME NODES
+NODELIST(REASON)
+135 snow submit_s etri R 0:04 2 snow[01-02]
+136 thunder submit_t etri R 0:00 2 thunder[01-02]
+
+결과는 outoutput.[jobnumber].out 에 저장됨
+etrimastercl:clusterfsetrihplbinLinux_Arm cat outoutput.132.out
+Master node: thunder01
+
+
+HPLinpack 2.3 -- High-Performance Linpack benchmark -- December 2, 2018
+Written by A. Petitet and R. Clint Whaley, Innovative Computing Laboratory, UTK
+Modified by Piotr Luszczek, Innovative Computing Laboratory, UTK
+Modified by Julien Langou, University of Colorado Denver
+
+
+An explanation of the inputoutput parameters follows:
+TV : Wall time  encoded variant.
+N : The order of the coefficient matrix A.
+NB : The partitioning blocking factor.
+P : The number of process rows.
+Q : The number of process columns.
+615
+
+작성자
+한태현
+작성 일자
+2021-9-7
+Time : Time in seconds to solve the linear system.
+Gflops : Rate of execution for solving the linear system.
+The following parameter values will be used:
+N : 80256
+NB : 192
+PMAP : Row-major process mapping
+P : 12
+Q : 16
+PFACT : Right
+NBMIN : 4
+NDIV : 2
+RFACT : Crout
+BCAST : 1ringM
+DEPTH : 1
+SWAP : Mix (threshold  64)
+L1 : transposed form
+U : transposed form
+EQUIL : yes
+ALIGN : 8 double precision words
+--------------------------------------------------------------------------------
+- The matrix A is randomly generated for each test.
+- The following scaled residual check will be computed:
+Ax-b_oo  ( eps  (  x _oo   A _oo   b _oo )  N )
+- The relative machine precision (eps) is taken to be 1.110223e-16
+- Computational tests pass if scaled residuals are less than 16.0
+
+
+TV N NB P Q Time Gflops
+--------------------------------------------------------------------------------
+WR11C2R4 80256 192 12 16 1512.36 2.2788e02
+HPL_pdgesv() start time Tue Oct 26 14:53:31 2021
+HPL_pdgesv() end time Tue Oct 26 15:18:43 2021
+--------------------------------------------------------------------------------
+Ax-b_oo(eps(A_oox_oob_oo)N) 1.78445132e-03 ...... PASSED
+
+
+Finished 1 tests with the following results:
+1 tests completed and passed residual checks,
+0 tests completed and failed residual checks,
+0 tests skipped because of illegal input values.
+--------------------------------------------------------------------------------
+715
+
+작성자
+한태현
+작성 일자
+2021-9-7
+End of Tests.
+
+
+2.3.
+Slurm script 작성 및 실행
+
+간단한 slurm script 구조
+etrimastercl:clusterfsetrihplbinLinux_Arm cat submit_snow.sh
+!binbash
+ Print the node that starts the process
+SBATCH --nodes2
+SBATCH --ntasks-per-node80
+SBATCH --partitionsnow
+SBATCH --outputoutoutput.J.out  STDOUT
+mpirun .xhpl
+
+위 스크립트의 의미
+
+snow partition 의node를2개사용하여각노드에80개의job 을
+분배해 작업을 수행하겠다.
+
+이때 결과는 out dir에 output.[jobid].out 로 저장 하겠다.
+
+SBATCH --nodes2
+
+사용할 노드의 갯수
+
+SBATCH --ntasks-per-node80
+
+노드 당 병렬 실행할 task 의 숫자
+
+SBATCH --partitionsnow
+
+사용할 partition
+
+SBATCH --outputoutoutput.J.out
+
+결과를 저장할 dir 및 파일 이름 형식
+
+mpirun .xhpl
+
+실행할 어플리케이션 (-np 옵션을 넣지 않는다)
+
+실행 (HPL)
+
+slurm 을이용한실행은가급적001_runhpl.sh 등의script 를이용하여
+주세요
+
+snow와thunder 가서로같은openmpi 를사용하지않아각각실행전
+path 설정이 필요합니다.
+
+HPL (thunder snow 다 가능)
+815
+
+작성자
+한태현
+작성 일자
+2021-9-7
+etrithunder01:clusterfsetrihplbinLinux_Arm .001_runhpl.sh
+snow
+snow
+PARTITION AVAIL TIMELIMIT NODES STATE NODELIST
+thunder up infinite 2 idle thunder[01-02]
+snow up infinite 2 idle snow[01-02]
+all up infinite 4 idle snow[01-02],thunder[01-02]
+Submitted batch job 144
+JOBID PARTITION NAME USER ST TIME NODES
+NODELIST(REASON)
+144 snow submit_s etri R 0:00 2 snow[01-02]
+
+실행 후 결과
+Master node: snow01
+
+
+HPLinpack 2.3 -- High-Performance Linpack benchmark -- December 2, 2018
+Written by A. Petitet and R. Clint Whaley, Innovative Computing Laboratory, UTK
+Modified by Piotr Luszczek, Innovative Computing Laboratory, UTK
+Modified by Julien Langou, University of Colorado Denver
+
+
+An explanation of the inputoutput parameters follows:
+TV : Wall time  encoded variant.
+N : The order of the coefficient matrix A.
+NB : The partitioning blocking factor.
+P : The number of process rows.
+Q : The number of process columns.
+Time : Time in seconds to solve the linear system.
+Gflops : Rate of execution for solving the linear system.
+The following parameter values will be used:
+N : 10000
+NB : 192
+PMAP : Row-major process mapping
+P : 10 8 4
+915
+
+작성자
+한태현
+작성 일자
+2021-9-7
+Q : 16 20 40
+PFACT : Right
+NBMIN : 4
+NDIV : 2
+RFACT : Crout
+BCAST : 1ringM
+DEPTH : 1
+SWAP : Mix (threshold  64)
+L1 : transposed form
+U : transposed form
+EQUIL : yes
+ALIGN : 8 double precision words
+--------------------------------------------------------------------------------
+- The matrix A is randomly generated for each test.
+- The following scaled residual check will be computed:
+Ax-b_oo  ( eps  (  x _oo   A _oo   b _oo )  N )
+- The relative machine precision (eps) is taken to be 1.110223e-16
+- Computational tests pass if scaled residuals are less than 16.0
+
+
+TV N NB P Q Time Gflops
+--------------------------------------------------------------------------------
+WR11C2R4 10000 192 10 16 13.93 4.7865e01
+HPL_pdgesv() start time Mon Oct 25 17:04:50 2021
+HPL_pdgesv() end time Mon Oct 25 17:05:04 2021
+--------------------------------------------------------------------------------
+Ax-b_oo(eps(A_oox_oob_oo)N) 4.57441358e-03 ...... PASSED
+
+
+TV N NB P Q Time Gflops
+--------------------------------------------------------------------------------
+WR11C2R4 10000 192 8 20 11.63 5.7349e01
+HPL_pdgesv() start time Mon Oct 25 17:05:04 2021
+HPL_pdgesv() end time Mon Oct 25 17:05:15 2021
+--------------------------------------------------------------------------------
+Ax-b_oo(eps(A_oox_oob_oo)N) 4.21176488e-03 ...... PASSED
+
+
+TV N NB P Q Time Gflops
+1015
+
+작성자
+한태현
+작성 일자
+2021-9-7
+--------------------------------------------------------------------------------
+WR11C2R4 10000 192 4 40 7.22 9.2376e01
+HPL_pdgesv() start time Mon Oct 25 17:05:15 2021
+HPL_pdgesv() end time Mon Oct 25 17:05:23 2021
+--------------------------------------------------------------------------------
+Ax-b_oo(eps(A_oox_oob_oo)N) 6.85416234e-03 ...... PASSED
+
+
+Finished 3 tests with the following results:
+3 tests completed and passed residual checks,
+0 tests completed and failed residual checks,
+0 tests skipped because of illegal input values.
+--------------------------------------------------------------------------------
+End of Tests.
+
+
+
+실행 (HPCG)
+
+hpcg 의 경우 output 이 따로 생성됩니다.
+etrithunder01:clusterfsetrihpcg .001_runhpcg.sh snow
+snow
+PARTITION AVAIL TIMELIMIT NODES STATE NODELIST
+thunder up infinite 2 idle thunder[01-02]
+snow up infinite 2 idle snow[01-02]
+all up infinite 4 idle snow[01-02],thunder[01-02]
+Submitted batch job 145
+JOBID PARTITION NAME USER ST TIME NODES
+NODELIST(REASON)
+145 snow submit_s etri R 0:00 2 snow[01-02]
+
+실행 후 결과
+etrithunder01:clusterfsetrihpcg cat
+snow01-160ranks-1threads_HPCG-Benchmark_3.0_2021-10-26_15-44-06.tx
+t
+1115
+
+작성자
+한태현
+작성 일자
+2021-9-7
+snow01-160ranks-1threads
+versionHPCG-Benchmark_3.0
+Release dateNovember 11, 2015
+Machine Summary
+Machine Summary::Distributed Processes160
+Machine Summary::Threads per processes1
+Global Problem Dimensions
+Global Problem Dimensions::Global nx384
+Global Problem Dimensions::Global ny768
+Global Problem Dimensions::Global nz480
+Processor Dimensions
+Processor Dimensions::npx4
+Processor Dimensions::npy8
+Processor Dimensions::npz5
+Local Domain Dimensions
+Local Domain Dimensions::nx96
+Local Domain Dimensions::ny96
+Local Domain Dimensions::Lower ipz0
+Local Domain Dimensions::Upper ipz4
+Local Domain Dimensions::nz96
+ Problem Summary 
+Setup Information
+Setup Information::Setup Time2.15955
+Linear System Information
+Linear System Information::Number of Equations141557760
+Linear System Information::Number of Nonzero Terms3806817400
+Multigrid Information
+Multigrid Information::Number of coarse grid levels3
+Multigrid Information::Coarse Grids
+Multigrid Information::Coarse Grids::Grid Level1
+Multigrid Information::Coarse Grids::Number of Equations17694720
+Multigrid Information::Coarse Grids::Number of Nonzero Terms473951800
+Multigrid Information::Coarse Grids::Number of Presmoother Steps1
+Multigrid Information::Coarse Grids::Number of Postsmoother Steps1
+Multigrid Information::Coarse Grids::Grid Level2
+Multigrid Information::Coarse Grids::Number of Equations2211840
+1215
+
+작성자
+한태현
+작성 일자
+2021-9-7
+Multigrid Information::Coarse Grids::Number of Nonzero Terms58770712
+Multigrid Information::Coarse Grids::Number of Presmoother Steps1
+Multigrid Information::Coarse Grids::Number of Postsmoother Steps1
+Multigrid Information::Coarse Grids::Grid Level3
+Multigrid Information::Coarse Grids::Number of Equations276480
+Multigrid Information::Coarse Grids::Number of Nonzero Terms7228936
+Multigrid Information::Coarse Grids::Number of Presmoother Steps1
+Multigrid Information::Coarse Grids::Number of Postsmoother Steps1
+ Memory Use Summary 
+Memory Use Information
+Memory Use Information::Total memory used for data (Gbytes)101.265
+Memory Use Information::Memory used for OptimizeProblem data
+(Gbytes)0
+Memory Use Information::Bytes per equation (Total memory  Number of
+Equations)715.364
+Memory Use Information::Memory used for linear system and CG
+(Gbytes)89.1113
+Memory Use Information::Coarse Grids
+Memory Use Information::Coarse Grids::Grid Level1
+Memory Use Information::Coarse Grids::Memory used10.6527
+Memory Use Information::Coarse Grids::Grid Level2
+Memory Use Information::Coarse Grids::Memory used1.33395
+Memory Use Information::Coarse Grids::Grid Level3
+Memory Use Information::Coarse Grids::Memory used0.167371
+ VV Testing Summary 
+Spectral Convergence Tests
+Spectral Convergence Tests::ResultPASSED
+Spectral Convergence Tests::Unpreconditioned
+Spectral Convergence Tests::Unpreconditioned::Maximum iteration count11
+Spectral Convergence Tests::Unpreconditioned::Expected iteration count12
+Spectral Convergence Tests::Preconditioned
+Spectral Convergence Tests::Preconditioned::Maximum iteration count2
+Spectral Convergence Tests::Preconditioned::Expected iteration count2
+Departure from Symmetry x'Ay-y'Ax(2xAy)epsilon
+Departure from Symmetry
+x'Ay-y'Ax(2xAy)epsilon::ResultPASSED
+Departure from Symmetry x'Ay-y'Ax(2xAy)epsilon::Departure for
+1315
+
+작성자
+한태현
+작성 일자
+2021-9-7
+SpMV2.24833e-10
+Departure from Symmetry x'Ay-y'Ax(2xAy)epsilon::Departure for
+MG0.000115979
+ Iterations Summary 
+Iteration Count Information
+Iteration Count Information::ResultPASSED
+Iteration Count Information::Reference CG iterations per set50
+Iteration Count Information::Optimized CG iterations per set51
+Iteration Count Information::Total number of reference iterations50
+Iteration Count Information::Total number of optimized iterations51
+ Reproducibility Summary 
+Reproducibility Information
+Reproducibility Information::ResultPASSED
+Reproducibility Information::Scaled residual mean0.00448442
+Reproducibility Information::Scaled residual variance0
+ Performance Summary (times in sec) 
+Benchmark Time Summary
+Benchmark Time Summary::Optimization phase2.95421
+Benchmark Time Summary::DDOT4.85044
+Benchmark Time Summary::WAXPBY1.46388
+Benchmark Time Summary::SpMV7.27768
+Benchmark Time Summary::MG46.5758
+Benchmark Time Summary::Total60.3142
+Floating Point Operations Summary
+Floating Point Operations Summary::Raw DDOT4.35998e10
+Floating Point Operations Summary::Raw WAXPBY4.35998e10
+Floating Point Operations Summary::Raw SpMV3.95909e11
+Floating Point Operations Summary::Raw MG2.21464e12
+Floating Point Operations Summary::Total2.69775e12
+Floating Point Operations Summary::Total with convergence
+overhead2.64485e12
+GBs Summary
+GBs Summary::Raw Read BW275.516
+GBs Summary::Raw Write BW63.6723
+GBs Summary::Raw Total BW339.188
+GBs Summary::Total with convergence and optimization phase
+overhead329.742
+1415
+
+작성자
+한태현
+작성 일자
+2021-9-7
+GFLOPs Summary
+GFLOPs Summary::Raw DDOT8.98883
+GFLOPs Summary::Raw WAXPBY29.7837
+GFLOPs Summary::Raw SpMV54.4005
+GFLOPs Summary::Raw MG47.5492
+GFLOPs Summary::Raw Total44.7282
+GFLOPs Summary::Total with convergence overhead43.8512
+GFLOPs Summary::Total with convergence and optimization phase
+overhead43.4826
+User Optimization Overheads
+User Optimization Overheads::Optimization phase time (sec)2.95421
+User Optimization Overheads::Optimization phase time vs reference
+SpMVMG time2.86486
+DDOT Timing Variations
+DDOT Timing Variations::Min DDOT MPI_Allreduce time1.08253
+DDOT Timing Variations::Max DDOT MPI_Allreduce time6.33591
+DDOT Timing Variations::Avg DDOT MPI_Allreduce time3.50389
+Final Summary
+Final Summary::HPCG result is VALID with a GFLOPs rating of43.4826
+Final Summary::HPCG 2.4 rating for historical reasons is43.6375
+Final Summary::Results are valid but execution time (sec) is60.3142
+Final Summary::You have selected the QuickPath optionResults are official
+for legacy installed systems with confirmation from the HPCG Benchmark
+leaders.
+Final Summary::After confirmation please upload results from the YAML file
+contents tohttp:hpcg-benchmark.org
+1515

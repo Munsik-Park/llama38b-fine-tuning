@@ -1,0 +1,397 @@
+HPC SYSTEM: PARALLEL IO OPERATIONS
+11272024
+김성조
+
+Contents
+Recall: HPC System Architecture
+IO Software Stack
+QA
+
+Recall: HPC System Architecture
+
+Service
+nodes
+t
+t
+Management
+node
+Interconnect
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+Compute nodes
+Servers
+Storage appliance
+
+HPC System: Distributed Storage (13)
+
+4TB
+56 57 58 59
+48 49 50 51
+40 41 42 43
+32 33 34 35
+60 61 62 63
+52 53 54 55
+44 45 46 47
+36 37 38 39
+24 25 26 27
+16 17 18 19
+
+10 11
+
+28 29 30 31
+20 21 22 23
+12 13 14 15
+
+Storage appliance: 4
+node00
+1024GB
+1024GB
+56 57 58 59
+48 49 50 51
+40 41 42 43
+32 33 34 35
+60 61 62 63
+52 53 54 55
+44 45 46 47
+36 37 38 39
+24 25 26 27
+16 17 18 19
+
+10 11
+
+28 29 30 31
+20 21 22 23
+12 13 14 15
+
+1024GB
+56 57 58 59
+48 49 50 51
+40 41 42 43
+32 33 34 35
+60 61 62 63
+52 53 54 55
+44 45 46 47
+36 37 38 39
+24 25 26 27
+16 17 18 19
+
+10 11
+
+28 29 30 31
+20 21 22 23
+12 13 14 15
+
+node01
+nodeN
+1TB
+1TB
+1TB
+1TB
+Infiniband: 200Gbs
+
+HPC System: Distributed Storage (23)
+
+56 57 58 59
+48 49 50 51
+40 41 42 43
+32 33 34 35
+60 61 62 63
+52 53 54 55
+44 45 46 47
+36 37 38 39
+24 25 26 27
+16 17 18 19
+
+10 11
+
+28 29 30 31
+20 21 22 23
+12 13 14 15
+
+1024GB
+1024GB
+56 57 58 59
+48 49 50 51
+40 41 42 43
+32 33 34 35
+60 61 62 63
+52 53 54 55
+44 45 46 47
+36 37 38 39
+24 25 26 27
+16 17 18 19
+
+10 11
+
+28 29 30 31
+20 21 22 23
+12 13 14 15
+
+1024GB
+56 57 58 59
+48 49 50 51
+40 41 42 43
+32 33 34 35
+60 61 62 63
+52 53 54 55
+44 45 46 47
+36 37 38 39
+24 25 26 27
+16 17 18 19
+
+10 11
+
+28 29 30 31
+20 21 22 23
+12 13 14 15
+
+node00
+node01
+nodeN
+Storage appliance: 4
+Infiniband: 200Gbs
+
+HPC System: Distributed Storage (33)
+
+56 57 58 59
+48 49 50 51
+40 41 42 43
+32 33 34 35
+60 61 62 63
+52 53 54 55
+44 45 46 47
+36 37 38 39
+24 25 26 27
+16 17 18 19
+
+10 11
+
+28 29 30 31
+20 21 22 23
+12 13 14 15
+
+56 57 58 59
+48 49 50 51
+40 41 42 43
+32 33 34 35
+60 61 62 63
+52 53 54 55
+44 45 46 47
+36 37 38 39
+24 25 26 27
+16 17 18 19
+
+10 11
+
+28 29 30 31
+20 21 22 23
+12 13 14 15
+
+56 57 58 59
+48 49 50 51
+40 41 42 43
+32 33 34 35
+60 61 62 63
+52 53 54 55
+44 45 46 47
+36 37 38 39
+24 25 26 27
+16 17 18 19
+
+10 11
+
+28 29 30 31
+20 21 22 23
+12 13 14 15
+
+node00
+node01
+nodeN
+Storage appliance: 4
+Infiniband: 200Gbs
+
+HPC System: Parallel Processing
+
+56 57 58 59
+48 49 50 51
+40 41 42 43
+32 33 34 35
+60 61 62 63
+52 53 54 55
+44 45 46 47
+36 37 38 39
+24 25 26 27
+16 17 18 19
+
+10 11
+
+28 29 30 31
+20 21 22 23
+12 13 14 15
+
+1024GB
+1024GB
+56 57 58 59
+48 49 50 51
+40 41 42 43
+32 33 34 35
+60 61 62 63
+52 53 54 55
+44 45 46 47
+36 37 38 39
+24 25 26 27
+16 17 18 19
+
+10 11
+
+28 29 30 31
+20 21 22 23
+12 13 14 15
+
+1024GB
+56 57 58 59
+48 49 50 51
+40 41 42 43
+32 33 34 35
+60 61 62 63
+52 53 54 55
+44 45 46 47
+36 37 38 39
+24 25 26 27
+16 17 18 19
+
+10 11
+
+28 29 30 31
+20 21 22 23
+12 13 14 15
+
+node00
+node01
+node07
+Storage appliance: 4
+Infiniband: 200Gbs
+
+What is Parallel IO? Why does it matter?
+Users of HPC systems frequently find themselves in an interesting 
+situations:
+ It is NOT CPU, memory, or network that restricts the performance of applications, but 
+storage system.
+IO behavior is the key factor to determine the overall system 
+performance.
+Understanding the parallel IO operations and the issues involved is critical 
+to meet the requirements for a particular HPC systems andor decide to 
+IO solutions.
+
+IO Software Stack (14)
+Storage hardware
+ Disks, SSDs, controllers, and inter-connection network
+ Data is accessed at the granularity of blocks across multiple physical
+devices in a RAID array.
+Parallel file system (PFS)
+ Lustre, GPFS, BeeGFS, OrangeFS, PanFS, Ceph
+ Manage the data on the storage hardware.
+ Present the data as a directory hierarchy.
+ Coordinate access to files and directories in a consistent manner.
+Message Passing Interface (MPI)
+ OpenMPI, MPICH2, Intel MPI
+MPI-IO
+ Enable optimizations such as data caching, process coordination, 
+data sieving, two-phase IO.
+
+Storage Hardware
+Parallel File Systems
+POSIX IO
+MPI-IO
+
+IO Software Stack (24)
+High-level IO libraries
+ Provide structured data abstraction for scientific applications.
+ Better describe how the application accesses shared storage resources.
+Parallel IO applications (link)
+ Access high-level IO, MPI-IO, and Posix IO libraries.
+ Access MPI-IO and POSIX IO libraries.
+ Access POSIX IO library directly.
+
+Storage Hardware
+Parallel File Systems
+POSIX IO
+MPI-IO
+High-level IO lib.
+PnetCDF  HDF5
+Parallel IO Applications
+
+IO Software Stack (34)
+
+Parallel File Systems
+POSIX IO
+MPI-IO
+High-level IO lib.
+PnetCDF  HDF5
+Parallel IO Applications
+Parallel IO Applications
+Parallel IO Applications
+
+IO Software Stack (44)
+
+Parallel File Systems
+POSIX IO
+MPI-IO
+High-level IO lib.
+PnetCDF  HDF5
+Parallel IO Applications

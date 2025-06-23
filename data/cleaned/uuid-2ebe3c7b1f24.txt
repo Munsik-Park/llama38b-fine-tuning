@@ -1,0 +1,131 @@
+인지노믹스
+작업 내용
+목차
+사전 설명
+
+Dorado 
+파일 입력 및 출력 확인 가능 ( pod5 - bam )
+dorado 데모는 데이터를 고정해서 잘 구동되게 만들어 놓은 이미지(latest) 와
+ 파일 입출력 기능을 추가한 이미지 (0.0.1) 두가지로 나누었습니다.
+
+Minimap2
+파일 입력 및 출력 확인 불가능
+현재 정해진 데이터대로 구동되는 출력 로그만 확인 가능
+
+수행내용
+Dorado - demo
+사전에 미리 지정된 data 를 이용해 dorado 컨테이너를 구동시킵니다.
+
+Dorado - demo
+
+로그인
+홈페이지에 로그인 합니다.
+
+Uri : miso.juxtagene.com
+ID : juxtagene
+PW : 202
+Dorado - demo
+
+프로젝트 생성
+프로젝트를 생성합니다.
+
+Dorado - demo
+
+프로젝트 생성
+Demo1 버튼을 누른 뒤
+프로젝트의 정보를 입력합니다.
+
+이미지 : juxtagenedorado:latest
+
+Node : 1
+
+Dorado - demo
+
+프로젝트 수행
+프로젝트가 생성된것을 확인후
+실행 합니다.
+
+Dorado - demo
+
+프로젝트 수행
+확인 탭의 해당 프로젝트가
+실행되는 로그를 확인합니다.
+
+수행내용
+Dorado  파일 IO
+Dorado 에 .pod5 데이터를 입력하고 .bam 파일을 그 출력으로 받습니다.
+
+Dorado  파일 IO
+
+프로젝트 생성
+프로젝트를 생성합니다.
+
+Dorado - 파일 IO
+
+프로젝트 생성
+Demo1 버튼을 누른 뒤
+프로젝트의 정보를 입력합니다.
+Multiple file 탭에 입력할 파일을 업로드합니다.
+
+이미지 : juxtagenedorado:0.0.1
+
+Node : 1
+
+파일 입력 : Multiple file
+
+별첨 된 pod5 파일들을 입력하시면 됩니다.
+Dorado - 파일 IO
+
+프로젝트 생성
+파일 입력 : Multiple file
+
+별첨 된 pod5 파일들을 입력하시면 됩니다.
+Dorado - 파일 IO
+
+프로젝트 수행
+프로젝트가 생성된것을 확인후
+실행 합니다.
+
+Dorado - 파일 IO
+
+프로젝트 수행
+확인 탭의 해당 프로젝트가
+실행되는 로그를 확인합니다.
+
+Dorado - 파일 IO
+
+프로젝트 완료
+프로젝트 수행 완료 후 결과 파일을
+다운로드 받습니다.
+
+결과 : output.bam
+
+수행내용
+Minimap2 - demo
+사전에 미리 지정된 data 를 이용해 Minimap2 컨테이너를 구동시킵니다.
+
+Minimap2 - demo
+
+프로젝트 생성
+프로젝트를 생성합니다.
+
+Minimap2 - demo
+
+프로젝트 생성
+Demo1 버튼을 누른 뒤
+프로젝트의 정보를 입력합니다.
+
+이미지 : juxtageneminimap2:latest
+
+Node : 1
+Minimap2 - demo
+
+프로젝트 수행
+프로젝트가 생성된것을 확인후
+실행 합니다.
+
+Minimap2 - demo
+
+프로젝트 수행
+확인 탭의 해당 프로젝트가
+실행되는 로그를 확인합니다.

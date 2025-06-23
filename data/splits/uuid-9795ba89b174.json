@@ -1,0 +1,19 @@
+{
+  "chunks": [
+    "Unnamed: 0 Unnamed: 1 Unnamed: 2 견적서(Quotation) Unnamed: 4 Unnamed: 5 Unnamed: 6 Unnamed: 7\n0 NaN NaN NaN NaN NaN NaN NaN\n1 NaN NaN NaN NaN NaN NaN 주식회사 아이센트 NaN\n2 NaN NaN NaN NaN NaN NaN 서울시 성동구 아차산로17길 49 NaN\n3 NaN NaN NaN NaN NaN NaN 생각공장데시앙플렉스 15층 NaN\n4 NaN NaN NaN NaN NaN NaN Tel: 02-3443-8077 NaN\n5 수신 회사 젝사젠 NaN NaN NaN Fax: 02-3443-7794 NaN\n6 NaN 부서 연구소 NaN NaN 견적일 견적번호 NaN\n7 NaN 성명 김현기 수석님 NaN NaN 2024-06-11 00:00:00 ICENT-C 2024-06-11 005\n8 NaN Fax : 010-7793-7389 NaN NaN NaN NaN NaN\n9 NaN NaN NaN NaN NaN NaN NaN\n10 견적유효기간 NaN 납기예정일 Warranty 대금결제조건 NaN 아이센트 담당자 NaN\n11 견적일로부터 8주 NaN 발주 후 6주일 이내 1년 향후 협의 NaN 김경우 사원 NaN\n12 NaN NaN NaN NaN NaN NaN NaN NaN\n13 Project Name : NaN Croda Europe Network NaN NaN NaN NaN (단위:원)\n14 NaN Product No. Description NaN Qty 소비자가 견적단가 견적금액\n15 1 MX85-HW NaN NaN 1 8000000 2938000 2938000\n16 NaN MX85-HW Meraki MX85 RouterSecurity Appliance NaN 1 NaN NaN NaN\n17 NaN LIC-MX85-ENT-1Y Meraki MX85 Enterprise License and Support, 1YR NaN 1 NaN NaN NaN\n18 NaN MA-PWR-CORD-EU Meraki AC Power Cord for MX and MS (EU Plug) NaN 1 NaN NaN NaN\n19 2 MR36-HW NaN NaN 1 2000000 676000 676000\n20 NaN MR36-HW Meraki MR36 WiFi 6 Indoor AP NaN 1 NaN NaN NaN\n21 NaN LIC-ENT-1YR Meraki MR Enterprise License, 1YR NaN 1 NaN NaN NaN\n22 3 FPR1010-ASA-K9 NaN NaN 1 7000000 1138800 1138800\n23 NaN FPR1010-ASA-K9 Cisco Firepower 1010 ASA Appliance, Desktop NaN 1 NaN NaN NaN\n24 NaN CON-SNT-FPR1010A SNTC-8X5XNBD Cisco Firepower 1010 NaN 1 NaN NaN NaN\n25 4 CBS350-48T-4G-EU NaN NaN 2 5000000 800000 1600000\n26 NaN CBS350-48T-4G-EU CBS350 Managed 48-port GE, 4x1G SFP NaN 2 NaN NaN NaN\n27 NaN CON-SNT-CBS3T504 SNTC-8X5XNBD CBS350 Managed 48-port GE, 4x1G SFP NaN 2 NaN NaN NaN\n28 Remarkn1. 현금 결재 조건n2. 상기 견적은 프로젝트 진행상 변경될 수 있습니다. NaN NaN NaN NaN 계 NaN 6352800\n29 NaN NaN NaN NaN NaN 부가세 NaN 635280\n30 NaN NaN NaN NaN NaN 총 계 NaN 6988080\n31 NaN NaN NaN NaN NaN NaN NaN NaN\n32 주식회사 아이센트 대표이사 문 원 상 NaN NaN NaN NaN NaN NaN NaN\n33 NaN NaN NaN NaN NaN 고객 발주 사인 란 NaN NaN"
+  ],
+  "metadata": {
+    "original_filename": "젝사젠 네트워크 _240611_시스코 아이센트-김현기의 MacBook Pro.txt",
+    "text_hash": "9795ba89b174",
+    "text_length": 2024,
+    "created_at": "",
+    "tags": [],
+    "origin": "사내 문서"
+  },
+  "split_info": {
+    "chunk_size": null,
+    "stride": null,
+    "min_length": 50,
+    "total_chunks": 1
+  }
+}

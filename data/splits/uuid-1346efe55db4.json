@@ -1,0 +1,22 @@
+{
+  "chunks": [
+    "HPC System Software Architecture\n11132024\n김성조\nParallel File System (PFS)\nOperating System\nMiddleware\nParallel Programming Model\nJob scheduler\nApplication and Software Development Ecosystem\nAgendas\nLustre\nGPFS\nBeeGFS\nPanFS\nCeph\nParallel File Systems\nFull 2023 HPC SYSPROS Survey Results Jennett Tillotson Senior HPC Systems Engineer National Center for Atmospheric Research jtillotsucar.edu\nSUSE Linux\nRedHat Enterprise Linux (RHEL)\nRocky\nCentOS\nUbuntu\nToss",
+    "Operating Systems for HPC System\nProgramming environment: CC, Fortran, Python\nMultithreading: openMP\nCompiler: PGI compilers, GNU compilers, Intel compiler\nGPU: OpenCL, CUDA",
+    "Software Development Ecosystem\nopenMPI\nMessage Passing Interface Chameleon (MPICH)\nMVAPICH\nIntel MPI",
+    "Message Passing Interface (MPI)\nSimple Linux Utility for Resource Management (SLURM)\nPortable Batch System (PBS)\nTerascale Open-source Resource and QUEue manager (TORQUE)\nLoading Sharing Facility (LSF)\nSun Grid Engine (SGE)\nWorkload Management\nSerial vs Parallel Programming\nApplication and Software Development Ecosystem"
+  ],
+  "metadata": {
+    "original_filename": "(자문)hpc_system_software_20241113.txt",
+    "text_hash": "1346efe55db4",
+    "text_length": 1056,
+    "created_at": "",
+    "tags": [],
+    "origin": "사내 문서"
+  },
+  "split_info": {
+    "chunk_size": null,
+    "stride": null,
+    "min_length": 50,
+    "total_chunks": 4
+  }
+}

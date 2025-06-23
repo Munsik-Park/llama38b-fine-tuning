@@ -1,0 +1,34 @@
+{
+  "chunks": [
+    "병렬 분산처리 시스템\n병렬 분산처리 라이브러리\n클러스터 시스템\n병렬 라이브러리 구축\n고성능 컴퓨터 병렬응용 작업 수행 인터페이스 구축\n분산 응용 소스 버전관리\n분산 응용 이미지 버전관리\n개발환경\n분산 응용 디버깅 및 개발 인터페이스 구축\n분산 응용 상태 관리\nJobmanager",
+    "병렬 분산처리 라이브러리\n병렬 라이브러리 구축\n분산응용의 디버깅 정보 수집\n분산응용을 고성능 컴퓨터 자원에 수행 가능\n고성능 컴퓨터와 클러스터간 인터페이스를 위한 미들웨어 구현\n클러스터\n쿠버네티스\n고성능 컴퓨터\n병렬 분산처리 라이브러리 시스템 구성도\n작업 수행 정보 저장\n작업 수행 요청\n작업 수행",
+    "병렬 분산처리 라이브러리 - 미들웨어\nJOBMANAGER 콘솔 메시지\n작업 명세 분석 기능\n분산응용의 상태 관리\n분산응용의 작업 이력 관리\n분산응용의 로그 데이터 관리\n고성능 컴퓨터와 클러스터 간 인터페이스 기능\n병렬 분산처리 라이브러리 - 병렬 라이브러리",
+    "각 연산 노드의 자원을 효율적으로 분배 \n작업의 수행 및 스케줄링\n연산노드의 작업을 다중 노드에 병렬로 처리",
+    "PBS 의 작업 현황\nhttps:olaf.seegene.com\n병렬 분산처리 라이브러리 - Kafka",
+    "작업 명세 전달\n작업 상태 전달\n작업 로그 전달 \n \nKafka 토픽 및 메세지 현황\ndev-kafka.seegene.com\n병렬 분산처리 라이브러리 - redis",
+    "작업의 상태 저장\n작업의 수행 정보 저장\n \nRedis 에 저장되는 작업 상태 및 정보\nhttps:dev-frontapi.seegene.com\n클러스터 시스템\n소프트웨어 배포 및 관리  소스 관리",
+    "병렬 소프트웨어 소스의 버전관리\n소프트웨어 빌드 환경 보존\n소프트웨어 이미지의 버전관리\n클러스터 시스템\n클러스터 시스템 - Kubernetes",
+    "클러스터 내부 시스템의 서비스\n각 서비스 유지 관리 자동화\n서비스별 자원 관리 및 확장성 부여\n클러스터 시스템\nKubernetes Rancher 의 dashboard\nhttps:rancher.seegene.com\n클러스터 시스템 - Gitlab",
+    "소프트웨어 빌드 환경 관리\n소스 버전관리\n클러스터 시스템\nGitlab\ndev-git.seegene.com\n클러스터 시스템 - Docker registry",
+    "클러스터 시스템\nDocker registry\nhttps:dev-dockerui.seegene.com\nSW 모니터링디버깅 환경구축\nHPC 에서 수행될 분산응용 소프트웨어의 개발환경\n분산 응용 데이터 수집\n개발환경\nSW 모니터링디버깅 환경구축 - ELK stack",
+    "작업 수행 이력 저장\n작업 수행 로그 저장\n작업 정보 검색\nComponent 간의 통신 msg 저장",
+    "개발환경\nELK stack message 조회 화면\nhttps:dev-elk.seegene.com\nSW 모니터링디버깅 환경구축 - 개발자 페이지",
+    "개발자의 작업 실행\n개발 소프트웨어의 HPC 환경 실행\n소프트웨어 로그 확인\n소프트웨어 작업 상태 확인",
+    "개발자 페이지 작업 수행화면\nhttps:dev-frontapi.seegene.com\n개발환경\n시연\n시나리오",
+    "local PC 상에서 git pull\nLocal PC 에서 소스 수정 및 docker push\n개발자 페이지에 image 뜬것 확인\nImage 확인, quota 주고 실행\n로그 및 상태 확인\nMonitoring page 에서 작업 현황 확인"
+  ],
+  "metadata": {
+    "original_filename": "병렬 분산처리 시스템 데모 시나리오(23-12-19)-2.txt",
+    "text_hash": "1bf6983e300a",
+    "text_length": 1753,
+    "created_at": "",
+    "tags": [],
+    "origin": "사내 문서"
+  },
+  "split_info": {
+    "chunk_size": null,
+    "stride": null,
+    "min_length": 50,
+    "total_chunks": 16
+  }
+}

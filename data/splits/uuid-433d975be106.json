@@ -1,0 +1,19 @@
+{
+  "chunks": [
+    "004 23300204155764 8079290 Unnamed: 3 Unnamed: 4 Unnamed: 5 Unnamed: 6 Unnamed: 7 Unnamed: 8 Unnamed: 9 Unnamed: 10 Unnamed: 11  유의사항(본 유의사항은 대량이체파일 등록 전에 모두 삭제해 주십시오.) Unnamed: 13 Unnamed: 14 Unnamed: 15 Unnamed: 16 Unnamed: 17 Unnamed: 18 Unnamed: 19 Unnamed: 20 Unnamed: 21 Unnamed: 22 Unnamed: 23 Unnamed: 24 Unnamed: 25\n0 004 47030201339214 5923840 NaN NaN NaN NaN NaN NaN NaN NaN NaN 1) A열 (은행명 또는 은행코드) NaN : 셀서식을 텍스트로 지정한 후 은행(기관) 코드 숫자 3자리 입력 또는 한글명 입력(필수입력) NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN\n1 004 222240113652 5340956 NaN NaN NaN NaN NaN NaN NaN NaN NaN 2) B열 (입금계좌번호) NaN : 셀서식을 텍스트로 지정한 후 입금하실 계좌번호 입력 (- 생략가능)(필수입력) NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN\n2 004 87050200016451 2772086 NaN NaN NaN NaN NaN NaN NaN NaN NaN 3) C열 (이체금액) NaN : 이체하실 금액(, 생략가능), 소수점 금액 입력시 오류(error) 발생하므로 반드시 확인(필수입력) NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN\n3 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN 4) D열 (예금주성명) NaN : 예금주성명(최대 20자리 입력가능) NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN\n4 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN  띄어쓰기(SPACE) 등이 있는 경우 예금주성명조회시 불일치가 발생하므로, 반드시 TEXT만 입력 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN\n5 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN 5) E열 (입금계좌메모) NaN : 받는분 통장표시(입금통장인자내역)으로 최대 10자리 입력가능 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN\n6 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN 6) F열 (출금계좌메모) NaN : 내 통장 메모( 출금통장인자내역)으로 최대 14자리 입력가능 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN\n7 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN 7) G열 (CMS코드 1) NaN : CMS입금인 경우 CMS코드 1 입력 (당행만 가능) NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN\n8 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN 8) H열 (CMS코드 2) NaN : CMS입금인 경우 CMS코드 2 입력 (당행만 가능) NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN\n9 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN 9) I열 (CMS코드23) NaN : CMS입금인 경우 CMS코드 3 입력 (당행만 가능) NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN\n10 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN 10) J열 (수수료 부담) NaN : 수수료부담을 송금 보내시는 분이 하실 경우 0, 입금 받는분이 하실 경우 1로 입력(미입력시 송금보내시는분 부담) NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN\n11 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN 11) K열 (메모) NaN : 메모기능으로 최대 10자리 입력 가능(선택사항으로 미입력 가능) NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN\n12 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN  주요 은행 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN\n13 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN 국민 004 경남 039 광주 034 기업 003 농협 011 아이엠뱅크 031 부산 032\n14 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN 산업 002 저축 050 새마을금고 045 수협 007 신한 088 신협 048 씨티 027\n15 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN KEB하나 081 우리 020 우체국 071 전북 037 SC 023 제주 035 HSBC 054\n16 NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN NaN 케이뱅크 089 카카오뱅크 090 토스뱅크 092 NaN NaN NaN NaN NaN NaN NaN NaN"
+  ],
+  "metadata": {
+    "original_filename": "다건이체_급여.txt",
+    "text_hash": "433d975be106",
+    "text_length": 2715,
+    "created_at": "",
+    "tags": [],
+    "origin": "사내 문서"
+  },
+  "split_info": {
+    "chunk_size": null,
+    "stride": null,
+    "min_length": 50,
+    "total_chunks": 1
+  }
+}

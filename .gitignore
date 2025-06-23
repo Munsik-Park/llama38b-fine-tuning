@@ -195,7 +195,7 @@ cython_debug/
 
 # Project specific ignores
 # 원본 문서 파일들 (용량이 크고 민감한 정보 포함 가능)
-doc-source/
+data/raw/
 
 # 추출된 텍스트 파일들 (용량이 크고 중복 데이터)
 data/extracted/

@@ -1,0 +1,19 @@
+{
+  "chunks": [
+    "switch\nISP\nrouter\nFirewall\nAP\nPOE\nSW\n전화기\npublic\ndhcp\niptime\nrancher\nmain(maas) server\n2port\nmgmt\nservice\ntest\nserver\nSW\npublic\nservice\nserver\nmain\npublic\ngw\nserver\ngw\nhttps:blog.bytebytego.compep103-typical-aws-network-architecture"
+  ],
+  "metadata": {
+    "original_filename": "(오비즈) 네트워크구성.txt",
+    "text_hash": "eb92bcb83c19",
+    "text_length": 240,
+    "created_at": "",
+    "tags": [],
+    "origin": "사내 문서"
+  },
+  "split_info": {
+    "chunk_size": null,
+    "stride": null,
+    "min_length": 50,
+    "total_chunks": 1
+  }
+}
