@@ -5,6 +5,7 @@
 Docker Desktop
 Apache Airflow Docker 이미지
 문서 변환용 Python 환경
+
 📍 리눅스 서버 (RTX 2080 x2)
 Python 3.10
 PyTorch (CUDA 11.8)

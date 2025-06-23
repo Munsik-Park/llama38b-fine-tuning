@@ -1,0 +1,40 @@
+model:
+  base_model: TinyLlama/TinyLlama-1.1B-Chat-v1.0
+  use_lora: true
+  lora_r: 8
+  lora_alpha: 16
+  lora_dropout: 0.05
+  lora_target_modules: ["q_proj", "v_proj"]
+
+tokenizer:
+  tokenizer_name: TinyLlama/TinyLlama-1.1B-Chat-v1.0
+  padding_side: right
+  truncation_side: right
+
+dataset:
+  train_jsonl_dir: data/jsonl
+  max_seq_length: 512
+  train_split_ratio: 1.0
+  input_field: text
+  target_field: text
+
+training:
+  output_dir: outputs/tinyllama-finetune
+  per_device_train_batch_size: 4        # ⚠️ RTX 2080 기준 안전한 설정
+  gradient_accumulation_steps: 4        # 실제 effective batch size = 16
+  num_train_epochs: 3
+  learning_rate: 2e-5
+  weight_decay: 0.01
+  warmup_steps: 50
+  lr_scheduler_type: cosine
+  fp16: true                            # RTX 2080에서 fp16 잘 작동함
+  logging_steps: 10
+  save_steps: 100
+  save_total_limit: 3
+  evaluation_strategy: "no"
+  dataloader_num_workers: 2
+  seed: 42
+
+hardware:
+  gpus: 1                                # ✅ GPU 한 대로 수정
+  use_deepspeed: false

@@ -12,3 +12,11 @@ xlrd>=2.0.0              # XLS 파일 지원
 # peft>=0.4.0
 # trl>=0.7.0
 # accelerate>=0.20.0 
+
+transformers>=4.39.0
+datasets>=2.18.0
+accelerate
+pyyaml
+peft>=0.4.0              # LoRA 파인튜닝을 위한 패키지
+
+
