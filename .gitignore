@@ -192,3 +192,14 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+
+# Project specific ignores
+# 원본 문서 파일들 (용량이 크고 민감한 정보 포함 가능)
+doc-source/
+
+# 추출된 텍스트 파일들 (용량이 크고 중복 데이터)
+data/extracted/
+
+# 테스트 파일들
+test_extractors.py
+extraction_test_report.md
