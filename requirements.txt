@@ -5,6 +5,7 @@ python-pptx>=1.0.0       # PPTX 파일 추출
 pandas>=2.3.0            # Excel 파일 추출
 openpyxl>=3.1.0          # XLSX 파일 지원
 xlrd>=2.0.0              # XLS 파일 지원
+unstructured[all-docs]
 
 # 향후 파인튜닝을 위한 패키지들 (예정)
 # torch>=2.0.0

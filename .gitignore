@@ -201,5 +201,4 @@ data/raw/
 data/extracted/
 
 # 테스트 파일들
-test_extractors.py
-extraction_test_report.md
+# extraction_test_report.md
