@@ -41,8 +41,8 @@ llama-fine-tuning/
 │   └── solar10b_fp16.yaml
 │
 ├── scripts/
-│   ├── extract/
-│   ├── preprocess/
+│   ├── extract_with_unstructured.py  # 문서 파싱 스크립트
+│   ├── convert_to_jsonl.py            # JSONL 변환 스크립트
 │   ├── train/
 │   │   └── finetune.py
 │   └── infer/
@@ -53,6 +53,23 @@ llama-fine-tuning/
 ├── README.md
 └── setup.md
 ```
+
+## 문서 파싱 및 JSONL 생성
+
+1. `data/raw/` 디렉토리에 문서를 배치합니다.
+2. Unstructured 패키지가 필요합니다. 다음 명령으로 설치 후 추출을 진행합니다.
+
+```bash
+pip install "unstructured[all-docs]"
+python scripts/extract_with_unstructured.py
+```
+
+3. 추출된 JSON을 JSONL 포맷으로 변환합니다.
+
+```bash
+python scripts/convert_to_jsonl.py
+```
+
 
 ## 실험 실행 예시
 
